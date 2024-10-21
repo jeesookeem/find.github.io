@@ -1,0 +1,49 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #000; /* Black background */
+  color: white; /* White text for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.spotlight {
+  position: fixed;
+  width: 200px; /* Spotlight size */
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 10; /* Ensure spotlight is above everything */
+}
+
+.image-container {
+  position: absolute;
+  width: 20vw; /* Adjust size relative to viewport width */
+  max-width: 400px; /* Set a maximum width */
+  min-width: 150px; /* Set a minimum width */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+.image-container img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.visible {
+  opacity: 1; /* Make the image visible */
+}
